@@ -1,0 +1,107 @@
+{
+  "name": "b2b-front",
+  "version": "0.1.0",
+  "private": true,
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}",
+      "src/**/**/*.{ts,tsx}",
+      "!*.js",
+      "!*/**/*.js",
+      "!src/**/*.data*",
+      "!src/**/*.data",
+      "!src/routes/*.{ts,tsx}",
+      "!src/index.{ts,tsx}",
+      "!src/infrastructure/defaultProps/defaultProps.ts",
+      "!src/domains/domains.ts",
+      "!src/react-app-env.d.ts",
+      "!src/services/test-id-selector/TestIdSelectorService.ts",
+      "!src/assets/styles/themes.ts"
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/test/setupTests.js"
+  },
+  "dependencies": {
+    "axios": "^0.23.0",
+    "babel-eslint": "^10.1.0",
+    "dotenv": "^10.0.0",
+    "enzyme-to-json": "^3.6.1",
+    "jest-environment-jsdom-sixteen": "^2.0.0",
+    "jest-styled-components": "^7.0.5",
+    "json-server": "^0.17.0",
+    "lint-staged": "^11.1.2",
+    "react": "^17.0.2",
+    "react-beautiful-dnd": "^13.1.0",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.3.0",
+    "react-scripts": "^3.4.4",
+    "react-test-renderer": "^17.0.2",
+    "react-toastify": "^8.1.0",
+    "styled-components": "^5.3.1",
+    "web-vitals": "^1.1.2"
+  },
+  "scripts": {
+    "start": "react-scripts  start",
+    "mocks": "node mocks/mockServer.js",
+    "build": "react-scripts build",
+    "build:image": "docker build --no-cache --force-rm -t b2b-frontend .",
+    "build:image:tag": "node tagimage",
+    "test": "jest --coverage=true --watchAll=false --env=jest-environment-jsdom-sixteen",
+    "coverage": "jest --coverage",
+    "test:component": "cypress run",
+    "test:component-open": "cypress open",
+    "prepare": "husky install",
+    "lint": "eslint src/**/*.ts src/**/*.tsx --fix",
+    "lint:staged": "lint-staged"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/react-hooks": "^7.0.2",
+    "@testing-library/user-event": "^12.8.3",
+    "@types/enzyme": "^3.10.9",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "@types/react": "^17.0.24",
+    "@types/react-beautiful-dnd": "^13.1.2",
+    "@types/react-dom": "^17.0.9",
+    "@types/react-router-dom": "^5.3.0",
+    "@types/styled-components": "^5.1.15",
+    "@typescript-eslint/eslint-plugin": "^5.2.0",
+    "@typescript-eslint/parser": "^5.2.0",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.3",
+    "cypress": "^8.4.1",
+    "enzyme": "^3.11.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-better-styled-components": "^1.1.2",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.26.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^7.0.2",
+    "jest": "^24.9.0",
+    "jest-junit": "^13.0.0",
+    "jest-react-hooks-shallow": "^1.5.1",
+    "prettier": "^2.4.1",
+    "ts-jest": "^26.4.2",
+    "typescript": "^4.4.3"
+  }
+}
